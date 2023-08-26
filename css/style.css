@@ -314,7 +314,7 @@ h6,
 /*** Service ***/
 .service-item {
     position: relative;
-    height: 300px;
+    height: 340px;
     padding: 0 30px;
     transition: .5s;
 }
