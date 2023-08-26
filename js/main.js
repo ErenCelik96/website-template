@@ -148,35 +148,6 @@ function updateTranslation(translationData) {
     });
   }
 
- /* document.addEventListener('DOMContentLoaded', () => {
-    // Sayfa yüklendiğinde çalışacak kod
-  
-    // Kullanıcının seçtiği dili alma veya varsayılan bir dil ayarlama
-    const selectedLanguage = localStorage.getItem('selectedLanguage') || 'tr';
-  
-    // Dil seçimini ayarlama
-    const languageSelector = document.getElementById('language-selector');
-    languageSelector.value = selectedLanguage;
-  
-    // Dil seçim değişikliği işleyicisi
-    languageSelector.addEventListener('change', event => {
-      const newLanguage = event.target.value;
-  
-      // Seçilen dili saklama
-      localStorage.setItem('selectedLanguage', newLanguage);
-  
-      // Çeviri dosyasını yükleme ve metinleri güncelleme
-      loadTranslation(newLanguage)
-        .then(updateTranslation);
-    });
-    // Çeviri dosyasını yükleme ve metinleri güncelleme
-    loadTranslation(selectedLanguage)
-      .then(updateTranslation)
-      .catch(error => {
-        console.error(`Çeviri dosyası yüklenirken hata oluştu: ${error}`);
-        return {}; // Boş bir çeviri nesnesi döndürme
-      });
-  });*/
   let selectedLanguage = localStorage.getItem('selectedLanguage') || 'tr'; // Varsayılan dil
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -189,8 +160,6 @@ function updateTranslation(translationData) {
         });
     });
 
-
-
   function changeLanguage(lang) {
     const newLanguage = lang;
       // Seçilen dili saklama
@@ -202,3 +171,15 @@ function updateTranslation(translationData) {
     // Burada dil değiştiğinde yapılması gereken işlemleri yapabilirsiniz,
     // örneğin metinleri çevirme veya arayüzü güncelleme gibi.
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var outside = document.getElementsByClassName("outside-onclick");
+    var navbarCollapse = document.getElementById("navbarCollapse");
+
+    // outside elemanlarından birine tıklandığında menüyü kapat
+    for (var i = 0; i < outside.length; i++) {
+        outside[i].addEventListener("click", function () {
+            navbarCollapse.classList.remove("show"); // Menüyü kapat
+        });
+    }
+});
