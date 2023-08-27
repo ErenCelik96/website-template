@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /blog-cities
+Disallow: /blog-montenegro
+Disallow: /blog-permits
+Disallow: /service-real-estate
+Disallow: /service-car
